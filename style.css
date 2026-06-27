@@ -1,407 +1,258 @@
 /* ==========================================================================
-   Configurações Globais (Paleta Vintage & Sépia)
-   ========================================================================== */
+   Configurações Gerais e Resets
+   ========================================================================== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #f7f4eb;       /* Bege suave imitando papel antigo */
+    --text-color: #2c251e;     /* Marrom quase preto para conforto de leitura */
+    --primary-color: #8c2d19;  /* Terracota/Sanguínea colonial */
+    --secondary-color: #d9a05b;/* Dourado queimado/Ouro envelhecido */
+    --panel-bg: #ffffff;       /* Fundo dos artigos */
+    --border-color: #e3dcce;   /* Bordas discretas */
 }
 
 body {
-    background-color: #f4eae1; /* Cor de papel envelhecido pergaminho */
-    background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 0); /* Textura sutil de papel antigo */
-    background-size: 24px 24px;
-    color: #2c1d11; /* Marrom escuro tipo tinta nanquim desbotada */
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.25rem;
-    line-height: 1.6;
-    padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Lora', Georgia, serif;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* ==========================================================================
-   Cabeçalho Vintage
-   ========================================================================== */
+   Header (Cabeçalho)
+   ========================================================================== */
 .main-header {
-    text-align: center;
-    max-width: 900px;
-    margin: 40px auto 60px auto;
+    text-align: center;
+    padding: 60px 0 20px 0;
+    background-color: #1a1512;
+    color: #f7f4eb;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
 .main-header h1 {
-    font-family: 'Cinzel', serif;
-    font-weight: 900;
-    font-size: 3rem;
-    color: #4a2f1b;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
 }
 
-.main-header h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    font-style: italic;
-    font-size: 1.5rem;
-    color: #705035;
-    margin-top: 10px;
+.main-header .subtitle {
+    font-style: italic;
+    font-size: 1.2rem;
+    opacity: 0.9;
 }
 
-/* Detalhes de linhas ornamentais clássicas */
-.header-decor {
-    height: 4px;
-    border-top: 1px solid #705035;
-    border-bottom: 1px solid #705035;
-    margin: 15px auto;
-    max-width: 600px;
-    position: relative;
-}
-
-.header-decor::after {
-    content: "❖";
-    position: absolute;
-    top: -12px;
-    left: calc(50% - 10px);
-    background: #f4eae1;
-    padding: 0 10px;
-    color: #705035;
-    font-size: 1rem;
+.header-line {
+    width: 150px;
+    height: 2px;
+    background-color: var(--secondary-color);
+    margin: 25px auto 0 auto;
 }
 
 /* ==========================================================================
-   Estrutura da Linha do Tempo (Timeline)
-   ========================================================================== */
+   Estrutura de Linha do Tempo (Timeline)
+   ========================================================================== */
 .timeline-container {
-    position: relative;
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 20px 0;
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
-/* A linha central vertical do tempo */
-.timeline-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 30px; /* Alinhado à esquerda para mobile e desktop clean */
-    height: 100%;
-    width: 2px;
-    background: #b59375; /* Tom de latão/bronze */
+/* Linha vertical central que cruza a página */
+.timeline-line {
+    position: absolute;
+    left: 40px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: var(--secondary-color);
+    opacity: 0.5;
 }
 
-/* Artigo individual */
 .timeline-item {
-    position: relative;
-    margin-bottom: 50px;
-    padding-left: 70px; /* Afastamento da linha */
+    position: relative;
+    margin-bottom: 60px;
+    padding-left: 70px;
 }
 
-/* O marcador redondo na linha */
-.timeline-marker {
-    position: absolute;
-    top: 5px;
-    left: 20px;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: #4a2f1b;
-    border: 4px solid #b59375;
-    box-shadow: 0 0 0 3px #f4eae1;
-    z-index: 1;
+/* Pequeno marcador circular na linha do tempo */
+.timeline-badge {
+    position: absolute;
+    left: 31px;
+    top: 24px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    border: 4px solid var(--bg-color);
+    box-shadow: 0 0 0 3px var(--secondary-color);
+    z-index: 2;
 }
 
-/* Caixa de conteúdo do artigo (Efeito pergaminho emoldurado) */
-.timeline-content {
-    background: #fffdf9;
-    padding: 30px;
-    border: 1px solid #d9c5b2;
-    border-radius: 4px;
-    box-shadow: 3px 3px 15px rgba(44, 29, 17, 0.08);
-    position: relative;
+/* Container de cada Artigo */
+.timeline-panel {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(44, 37, 30, 0.06);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Estilo para a data fixada no topo do card */
-.timeline-date {
-    display: inline-block;
-    font-family: 'Cinzel', serif;
-    font-weight: 700;
-    font-size: 1rem;
-    color: #a3724c;
-    border-bottom: 1px dashed #a3724c;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
+.timeline-panel:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(44, 37, 30, 0.12);
 }
 
-/* Numeração do Artigo */
+/* Topo do artigo (Meta-informações) */
+.panel-header {
+    background-color: #faf8f5;
+    padding: 25px 30px;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+}
+
 .article-number {
-    font-family: 'Cinzel', serif;
-    font-size: 1.4rem;
-    color: #4a2f1b;
-    margin-bottom: 5px;
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
 }
 
-/* Título explicativo */
-.article-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    font-style: italic;
-    font-size: 1.35rem;
-    color: #6e543f;
-    margin-bottom: 15px;
-    line-height: 1.3;
+.article-date {
+    float: right;
+    font-family: 'Cinzel', serif;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 3px 12px;
+    font-size: 0.85rem;
+    border-radius: 2px;
+    letter-spacing: 0.5px;
 }
 
-/* Texto descritivo */
-.timeline-content p {
-    margin-bottom: 15px;
-    text-align: justify;
-    text-indent: 20px; /* Recuo clássico de parágrafo antigo */
+.panel-header h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin-top: 5px;
+    clear: both;
 }
 
-.timeline-content p:last-child {
-    margin-bottom: 0;
+/* Corpo de texto do artigo */
+.panel-body {
+    padding: 30px;
 }
 
-/* Citações e Comparações (usado no Artigo IX) */
-blockquote {
-    background: #fdf6ee;
-    border-left: 3px solid #a3724c;
-    margin: 20px 0;
-    padding: 15px 20px;
-    font-style: italic;
-    font-size: 1.15rem;
-    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.02);
+.panel-body h3 {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+    border-left: 3px solid var(--secondary-color);
+    padding-left: 12px;
 }
 
-blockquote strong {
-    font-family: 'Cinzel', serif;
-    font-style: normal;
-    color: #4a2f1b;
-    display: block;
-    margin-bottom: 5px;
-    font-size: 1rem;
+.panel-body p {
+    margin-bottom: 18px;
+    text-align: justify;
+}
+
+.panel-body p:last-child {
+    margin-bottom: 0;
+}
+
+/* Caixas internas extras (Usado no Artigo IX das Conjurações) */
+.inner-box {
+    background-color: #fbfbfa;
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--primary-color);
+    padding: 20px;
+    margin-top: 25px;
+    border-radius: 0 4px 4px 0;
+}
+
+.inner-box h4 {
+    font-family: 'Cinzel', serif;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
 }
 
 /* ==========================================================================
-   Rodapé
-   ========================================================================== */
+   Footer (Rodapé)
+   ========================================================================== */
 .main-footer {
-    text-align: center;
-    margin: 60px 0 20px 0;
-    font-family: 'Cinzel', serif;
-    font-size: 0.85rem;
-    color: #8c735d;
-    letter-spacing: 1px;
+    text-align: center;
+    padding: 40px 0;
+    background-color: #1a1512;
+    color: #a89f91;
+    font-size: 0.95rem;
+    margin-top: 60px;
+    border-top: 4px solid var(--primary-color);
 }
 
 /* ==========================================================================
-   Responsividade para Telas Grandes (Centralização Opcional)
-   ========================================================================== */
-@media (min-width: 900px) {
-    /* Caso deseje mudar a linha para o meio em telas grandes no futuro, 
-       a estrutura atual à esquerda já mantém excelente legibilidade de livro antigo. */
-    body {
-        padding: 40px;
-    }
-}/* ==========================================================================
-   Configurações Globais (Paleta Vintage & Sépia)
-   ========================================================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+   Responsividade (Layout Responsivo)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .main-header h1 {
+        font-size: 2rem;
+    }
 
-body {
-    background-color: #f4eae1; /* Cor de papel envelhecido pergaminho */
-    background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 0); /* Textura sutil de papel antigo */
-    background-size: 24px 24px;
-    color: #2c1d11; /* Marrom escuro tipo tinta nanquim desbotada */
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.25rem;
-    line-height: 1.6;
-    padding: 20px;
-}
+    .main-header .subtitle {
+        font-size: 1rem;
+    }
 
-/* ==========================================================================
-   Cabeçalho Vintage
-   ========================================================================== */
-.main-header {
-    text-align: center;
-    max-width: 900px;
-    margin: 40px auto 60px auto;
-}
+    .timeline-line {
+        left: 20px;
+    }
 
-.main-header h1 {
-    font-family: 'Cinzel', serif;
-    font-weight: 900;
-    font-size: 3rem;
-    color: #4a2f1b;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
+    .timeline-item {
+        padding-left: 45px;
+    }
 
-.main-header h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    font-style: italic;
-    font-size: 1.5rem;
-    color: #705035;
-    margin-top: 10px;
-}
+    .timeline-badge {
+        left: 11px;
+    }
 
-/* Detalhes de linhas ornamentais clássicas */
-.header-decor {
-    height: 4px;
-    border-top: 1px solid #705035;
-    border-bottom: 1px solid #705035;
-    margin: 15px auto;
-    max-width: 600px;
-    position: relative;
-}
+    .article-date {
+        float: none;
+        display: inline-block;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
 
-.header-decor::after {
-    content: "❖";
-    position: absolute;
-    top: -12px;
-    left: calc(50% - 10px);
-    background: #f4eae1;
-    padding: 0 10px;
-    color: #705035;
-    font-size: 1rem;
-}
+    .panel-header h2 {
+        font-size: 1.3rem;
+        margin-top: 10px;
+    }
 
-/* ==========================================================================
-   Estrutura da Linha do Tempo (Timeline)
-   ========================================================================== */
-.timeline-container {
-    position: relative;
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 20px 0;
-}
-
-/* A linha central vertical do tempo */
-.timeline-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 30px; /* Alinhado à esquerda para mobile e desktop clean */
-    height: 100%;
-    width: 2px;
-    background: #b59375; /* Tom de latão/bronze */
-}
-
-/* Artigo individual */
-.timeline-item {
-    position: relative;
-    margin-bottom: 50px;
-    padding-left: 70px; /* Afastamento da linha */
-}
-
-/* O marcador redondo na linha */
-.timeline-marker {
-    position: absolute;
-    top: 5px;
-    left: 20px;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: #4a2f1b;
-    border: 4px solid #b59375;
-    box-shadow: 0 0 0 3px #f4eae1;
-    z-index: 1;
-}
-
-/* Caixa de conteúdo do artigo (Efeito pergaminho emoldurado) */
-.timeline-content {
-    background: #fffdf9;
-    padding: 30px;
-    border: 1px solid #d9c5b2;
-    border-radius: 4px;
-    box-shadow: 3px 3px 15px rgba(44, 29, 17, 0.08);
-    position: relative;
-}
-
-/* Estilo para a data fixada no topo do card */
-.timeline-date {
-    display: inline-block;
-    font-family: 'Cinzel', serif;
-    font-weight: 700;
-    font-size: 1rem;
-    color: #a3724c;
-    border-bottom: 1px dashed #a3724c;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-}
-
-/* Numeração do Artigo */
-.article-number {
-    font-family: 'Cinzel', serif;
-    font-size: 1.4rem;
-    color: #4a2f1b;
-    margin-bottom: 5px;
-}
-
-/* Título explicativo */
-.article-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    font-style: italic;
-    font-size: 1.35rem;
-    color: #6e543f;
-    margin-bottom: 15px;
-    line-height: 1.3;
-}
-
-/* Texto descritivo */
-.timeline-content p {
-    margin-bottom: 15px;
-    text-align: justify;
-    text-indent: 20px; /* Recuo clássico de parágrafo antigo */
-}
-
-.timeline-content p:last-child {
-    margin-bottom: 0;
-}
-
-/* Citações e Comparações (usado no Artigo IX) */
-blockquote {
-    background: #fdf6ee;
-    border-left: 3px solid #a3724c;
-    margin: 20px 0;
-    padding: 15px 20px;
-    font-style: italic;
-    font-size: 1.15rem;
-    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.02);
-}
-
-blockquote strong {
-    font-family: 'Cinzel', serif;
-    font-style: normal;
-    color: #4a2f1b;
-    display: block;
-    margin-bottom: 5px;
-    font-size: 1rem;
-}
-
-/* ==========================================================================
-   Rodapé
-   ========================================================================== */
-.main-footer {
-    text-align: center;
-    margin: 60px 0 20px 0;
-    font-family: 'Cinzel', serif;
-    font-size: 0.85rem;
-    color: #8c735d;
-    letter-spacing: 1px;
-}
-
-/* ==========================================================================
-   Responsividade para Telas Grandes (Centralização Opcional)
-   ========================================================================== */
-@media (min-width: 900px) {
-    /* Caso deseje mudar a linha para o meio em telas grandes no futuro, 
-       a estrutura atual à esquerda já mantém excelente legibilidade de livro antigo. */
-    body {
-        padding: 40px;
-    }
+    .panel-body {
+        padding: 20px;
+    }
+    
+    .panel-body h3 {
+        font-size: 1.15rem;
+    }
 }
