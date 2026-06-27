@@ -1,5 +1,5 @@
 /* ==========================================================================
-   FOLHA DE ESTILO: ARQUIVO HISTÓRICO VINTAGE (LINHA VERTICAL LINEAR)
+   FOLHA DE ESTILO: ARQUIVO HISTÓRICO VINTAGE (SEPARADOS NA HORIZONTAL)
    ========================================================================== */
 
 /* --- Configurações Gerais e Paleta de Cores --- */
@@ -10,7 +10,7 @@
     --ink-muted: #594a3c;         /* Tinta desbotada para textos secundários */
     --gold-vintage: #8c6d31;      /* Dourado envelhecido para detalhes */
     --iron-sepia: #403225;        /* Tom sépia para bordas e marcadores */
-    --line-color: #a69177;        /* Cor da linha lateral esquerda */
+    --line-color: #a69177;        /* Cor dos divisores horizontais */
 }
 
 * {
@@ -36,7 +36,7 @@ body {
 .main-header {
     text-align: center;
     max-width: 900px;
-    margin: 0 auto 4rem auto;
+    margin: 0 auto 3rem auto;
     padding: 2rem;
 }
 
@@ -82,47 +82,39 @@ body {
 
 /* --- Container da Linha do Tempo --- */
 .timeline-container {
-    position: relative;
-    max-width: 850px; /* Reduzido levemente para melhor leitura linear */
+    max-width: 850px;
     margin: 0 auto;
-    padding: 2rem 0 2rem 40px; /* Espaço na esquerda para abrigar a linha fixa */
+    padding: 1rem 0;
 }
 
-/* A Linha Espinhal (Fixada na Lateral Esquerda) */
-.timeline-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 15px; /* Alinhada à esquerda */
-    width: 2px;
-    background: linear-gradient(to bottom, transparent, var(--line-color) 5%, var(--line-color) 95%, transparent);
-}
-
-/* --- Itens / Eventos da Linha --- */
+/* --- Itens / Eventos (Separados Horizontalmente) --- */
 .timeline-item {
     position: relative;
     width: 100%;
-    margin-bottom: 4rem;
-    display: flex;
-    justify-content: flex-start; /* Todos alinhados à esquerda, um embaixo do outro */
+    margin-bottom: 5rem; /* Espaçamento generoso na vertical entre os textos */
 }
 
-/* Remove a alternância antiga para manter o fluxo uniforme */
-.timeline-item:nth-child(even) {
-    justify-content: flex-start;
+/* Linha Divisória Horizontal Clássica entre os itens */
+.timeline-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -2.5rem; /* Posiciona exatamente no meio do espaço vago */
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: radial-gradient(circle, var(--line-color) 0%, transparent 100%);
 }
 
-/* Bloco de Conteúdo (O Documento Ampliado) */
+/* Bloco de Conteúdo (Estilo Folha de Arquivo Única) */
 .timeline-content {
     position: relative;
-    width: 100%; /* Ocupa todo o espaço disponível após o recuo da linha */
+    width: 100%;
     background-color: var(--bg-parchment-dark);
-    padding: 2.5rem;
+    padding: 3rem;
     border: 1px solid #d4c29d;
-    box-shadow: 3px 3px 15px rgba(43, 35, 29, 0.08), 
-                inset 0 0 20px rgba(0, 0, 0, 0.02);
-    border-radius: 2px;
+    box-shadow: 0 4px 20px rgba(43, 35, 29, 0.08), 
+                inset 0 0 30px rgba(0, 0, 0, 0.03);
+    border-radius: 3px;
 }
 
 /* Margens internas dos parágrafos */
@@ -135,52 +127,63 @@ body {
     margin-bottom: 0;
 }
 
-/* --- Elementos Flutuantes (Marcadores e Datas) --- */
+/* --- Elementos Decorativos Internos --- */
 
-/* O Selo / Marcador Lateral Esquerdo */
+/* Pequeno marcador discreto no topo de cada bloco */
 .timeline-marker {
     position: absolute;
-    top: 2.5rem;
-    left: -25px; /* Ajustado para encaixar perfeitamente em cima da linha lateral */
-    width: 16px;
-    height: 16px;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+    background: var(--bg-parchment-dark);
+    border: 1px solid var(--gold-vintage);
     border-radius: 50%;
-    background: var(--bg-parchment);
-    border: 3px solid var(--gold-vintage);
-    box-shadow: 0 0 0 3px var(--bg-parchment);
-    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-marker::before {
+    content: '❖';
+    font-size: 0.65rem;
+    color: var(--gold-vintage);
 }
 
 /* Exibição Elegante da Data */
 .timeline-date {
     display: block;
+    text-align: center;
     font-family: 'Cinzel', serif;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--gold-vintage);
     border-bottom: 1px dashed var(--line-color);
-    padding-bottom: 0.3rem;
-    margin-bottom: 1rem;
-    letter-spacing: 1px;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
 }
 
 /* --- Tipografia Interna dos Artigos --- */
 .article-number {
     font-family: 'Cinzel', serif;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--iron-sepia);
-    line-height: 1.3;
-    margin-bottom: 0.2rem;
+    line-height: 1.4;
+    margin-bottom: 0.3rem;
+    text-align: center;
 }
 
 .article-title {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
     font-style: italic;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     color: var(--ink-muted);
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 /* --- Estilização de Citações (Blockquotes) --- */
@@ -224,20 +227,11 @@ body {
 /* ==========================================================================
    ADAPTAÇÃO PARA TELAS PEQUENAS (MOBILE)
    ========================================================================== */
-@media (max-width: 480px) {
-    .timeline-container {
-        padding-left: 30px;
-    }
-    
-    .timeline-container::before {
-        left: 10px;
-    }
-    
-    .timeline-marker {
-        left: -20px;
-    }
-    
+@media (max-width: 600px) {
     .timeline-content {
         padding: 1.5rem;
+    }
+    .timeline-item {
+        margin-bottom: 4rem;
     }
 }
