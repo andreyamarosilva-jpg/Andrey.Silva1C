@@ -1,258 +1,224 @@
-/* ==========================================================================
-   Configurações Gerais e Resets
-   ========================================================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+Aqui está a estrutura completa dos arquivos `index.html` e `style.css`. O design foi planejado especificamente para uma página de estudos historiográficos, utilizando uma paleta de cores sóbria que remete a documentos antigos (tons de bege, sépia e dourado escuro), layout responsivo e uma linha do tempo vertical limpa e fácil de ler.
 
-:root {
-    --bg-color: #f7f4eb;       /* Bege suave imitando papel antigo */
-    --text-color: #2c251e;     /* Marrom quase preto para conforto de leitura */
-    --primary-color: #8c2d19;  /* Terracota/Sanguínea colonial */
-    --secondary-color: #d9a05b;/* Dourado queimado/Ouro envelhecido */
-    --panel-bg: #ffffff;       /* Fundo dos artigos */
-    --border-color: #e3dcce;   /* Bordas discretas */
-}
+---
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Lora', Georgia, serif;
-    line-height: 1.7;
-    font-size: 1.1rem;
-}
+### 💻 1. Arquivo: `index.html`
 
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História do Brasil Colonial - Linha do Tempo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
 
-/* ==========================================================================
-   Header (Cabeçalho)
-   ========================================================================== */
-.main-header {
-    text-align: center;
-    padding: 60px 0 20px 0;
-    background-color: #1a1512;
-    color: #f7f4eb;
-    margin-bottom: 50px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-}
+    <header class="main-header">
+        <div class="container">
+            <h1>História do Brasil Colonial</h1>
+            <p class="subtitle">Uma análise cronológica e estrutural dos subperíodos (1500 – 1822)</p>
+            <div class="header-line"></div>
+        </div>
+    </header>
 
-.main-header h1 {
-    font-family: 'Cinzel', serif;
-    font-size: 2.8rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: var(--secondary-color);
-    margin-bottom: 10px;
-}
+    <main class="timeline-container">
+        <div class="timeline-line"></div>
 
-.main-header .subtitle {
-    font-style: italic;
-    font-size: 1.2rem;
-    opacity: 0.9;
-}
+        <article class="timeline-item">
+            <div class="timeline-badge"></div>
+            <div class="timeline-panel">
+                <div class="panel-header">
+                    <span class="article-number">Artigo I</span>
+                    <span class="article-date">22 de abril de 1500</span>
+                    <h2>O Choque de Mundos e a Lógica Mercantilista</h2>
+                </div>
+                <div class="panel-body">
+                    <h3>A Expansão Ultramarina e o Silêncio dos Primeiros Contatos no Litoral Baiano</h3>
+                    <p>Em 22 de abril de 1500, a esquadra comandada por Pedro Álvares Cabral avistou o Monte Pascoal, no atual sul da Bahia. Este evento, tradicionalmente chamado de "descobrimento", insere-se na lógica macroeconômica do Mercantilismo Metalista europeu. Portugal, uma potência marítima centralizada, buscava consolidar sua rota em direção às Índias e validar os limites territoriais acordados com a Espanha no Tratado de Tordesilhas (1494).</p>
+                    <p>A mentalidade que norteou os primeiros anos foi puramente extrativista. Sem a descoberta imediata de ouro ou prata, a Coroa portuguesa estabeleceu o monopólio sobre o pau-brasil. O processo de exploração baseou-se no escambo: os povos indígenas realizavam o corte e o transporte da madeira até as feitorias litorâneas em troca de utensílios de metal (machados e facas). Para as populações nativas, essas ferramentas representavam um salto tecnológico que otimizava o manejo da terra; para os europeus, tratava-se de uma troca altamente lucrativa. A sociedade colonial ainda não existia; as relações eram temporárias e mantidas por marinheiros, degredados e agentes comerciais.</p>
+                </div>
+            </div>
+        </article>
 
-.header-line {
-    width: 150px;
-    height: 2px;
-    background-color: var(--secondary-color);
-    margin: 25px auto 0 auto;
-}
+        <article class="timeline-item">
+            <div class="timeline-badge"></div>
+            <div class="timeline-panel">
+                <div class="panel-header">
+                    <span class="article-number">Artigo II</span>
+                    <span class="article-date">1530 – 1532</span>
+                    <h2>A Ocupação Territorial e a Introdução da Cana-de-Açúcar</h2>
+                </div>
+                <div class="panel-body">
+                    <h3>Das Feitorias às Vilas: A Fixação do Homem à Terra e a Gênese de São Vicente</h3>
+                    <p>A partir de 1530, a Coroa portuguesa percebeu que a mera manutenção de feitorias litorâneas era insuficiente para garantir a posse da terra frente às frequentes incursões de corsários franceses. Sob o comando de Martim Afonso de Sousa, foi enviada uma expedição colonizadora com a missão explícita de povoar, explorar e defender o território. Em 1532, fundou-se a Vila de São Vicente, no atual litoral de São Paulo, estabelecendo o primeiro núcleo urbano e administrativo formal da colônia.</p>
+                    <p>A mudança de mentalidade substituiu o extrativismo nômade pela colonização fixadora. O principal vetor econômico escolhido foi a cana-de-açúcar, um produto de alto valor comercial no mercado europeu. A introdução da lavoura açucareira exigiu a importação de cultura material específica (como enxadas, arados e gado bovino para tração) e deu início à concessão de sesmarias (lotes de terra). Esse período marcou o início da transição para uma estrutura social agrária e hierarquizada, onde o controle da terra passou a determinar o poder político local.</p>
+                </div>
+            </div>
+        </article>
 
-/* ==========================================================================
-   Estrutura de Linha do Tempo (Timeline)
-   ========================================================================== */
-.timeline-container {
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
+        <article class="timeline-item">
+            <div class="timeline-badge"></div>
+            <div class="timeline-panel">
+                <div class="panel-header">
+                    <span class="article-number">Artigo III</span>
+                    <span class="article-date">1534</span>
+                    <h2>A Tentativa de Descentralização: As Capitanias Hereditárias</h2>
+                </div>
+                <div class="panel-body">
+                    <h3>Privatização e Fracionamento: O Impacto e o Fracasso das Doações Régias</h3>
+                    <p>Em 1534, diante da escassez de recursos no tesouro real decorrente dos custos da administração do comércio no Oriente, o rei D. João III dividiu o litoral brasileiro em 15 grandes faixas de terra, doadas a 12 membros da pequena nobreza e da burocracia lusa — os chamados donatários. O sistema de Capitanias Hereditárias representou uma tentativa de transferir os custos econômicos e os riscos militares da colonização para a iniciativa privada.</p>
+                    <p>A base jurídica do sistema apoiava-se na Carta de Doação e Foral, documentos que garantiam aos donatários amplos poderes judiciais e administrativos, mimetizando estruturas feudais na América. No entanto, a falta de recursos próprios, o isolamento geográfico em relação a Lisboa, a falta de comunicação entre as províncias e a forte resistência militar das nações indígenas provocaram o fracasso da maior parte das capitanias. Apenas Pernambuco (devido ao sucesso do açúcar) e São Vicente (pelo comércio de indígenas e gado) prosperaram, demonstrando a necessidade de uma intervenção direta do Estado absolutista.</p>
+                </div>
+            </div>
+        </article>
 
-/* Linha vertical central que cruza a página */
-.timeline-line {
-    position: absolute;
-    left: 40px;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background-color: var(--secondary-color);
-    opacity: 0.5;
-}
+        <article class="timeline-item">
+            <div class="timeline-badge"></div>
+            <div class="timeline-panel">
+                <div class="panel-header">
+                    <span class="article-number">Artigo IV</span>
+                    <span class="article-date">1549</span>
+                    <h2>A Centralização Monárquica e a Ação Jesuítica</h2>
+                </div>
+                <div class="panel-body">
+                    <h3>A Fundação de Salvador e a Aliança entre a Cruz e a Espada</h3>
+                    <p>Em 29 de março de 1549, desembarcou na Bahia o primeiro Governador-Geral do Brasil, Tomé de Sousa, com a missão de fundar a cidade de Salvador, designada como a primeira capital da colônia. A criação do Governo-Geral foi a resposta política da metrópole ao fracasso das capitanias hereditárias. O objetivo era centralizar a administração, organizar a arrecadação de impostos, coordenar a defesa militar e incentivar a produção açucareira em larga escala.</p>
+                    <p>Junto à comitiva governamental, chegaram os primeiros padres jesuítas da Companhia de Jesus, liderados por Manuel da Nóbrega. Sob a égide da Contrarreforma Católica, a mentalidade jesuítica visava à expansão da fé através da catequese e da criação de missões (ou reduções). Os jesuítas atuaram como pacificadores dos conflitos entre colonos e nativos, alfabetizando e batizando os indígenas para integrá-los à lógica colonial. Contudo, a oposição dos jesuítas à escravização dos índios convertidos gerou tensões constantes com os colonos, que demandavam mão de obra para os canaviais.</p>
+                </div>
+            </div>
+        </article>
 
-.timeline-item {
-    position: relative;
-    margin-bottom: 60px;
-    padding-left: 70px;
-}
+        <article class="timeline-item">
+            <div class="timeline-badge"></div>
+            <div class="timeline-panel">
+                <div class="panel-header">
+                    <span class="article-number">Artigo V</span>
+                    <span class="article-date">1550 – 1570</span>
+                    <h2>A Institucionalização do Tráfico Negreiro e a Sociedade do Açúcar</h2>
+                </div>
+                <div class="panel-body">
+                    <h3>A Engrenagem da Plantation: Epidemias, Substituição Laboral e Hierarquia Social</h3>
+                    <p>Entre os anos de 1550 e 1570, o modelo econômico colonial consolidou-se sob a forma de Plantation: grandes latifúndios monocultores voltados para a exportação de açúcar. Duas variáveis cruciais forçaram a transição da mão de obra: o declínio demográfico das populações indígenas devido a epidemias de doenças europeias (varíola, sarampo, gripe) e o forte rendimento comercial que o tráfico negreiro transatlântico passou a gerar para a Coroa e para a burguesia mercantil portuguesa.</p>
+                    <p>A sociedade colonial estruturou-se de forma rigidamente estratificada e patriarcal. No topo da pirâmide social situava-se o Senhor de Engenho, que exercia domínio absoluto sobre sua família, agregados e escravizados. Na base, encontravam-se os africanos trazidos à força nos navios tumbeiros. O cotidiano nas senzalas era marcado pela violência física, jornadas exaustivas de até 18 horas e pelo apagamento forçado de identidades étnicas. A resistência se manifestava tanto por meio de revoltas e destruição de ferramentas quanto pela preservação silenciosa de rituais e crenças adaptadas ao novo território.</p>
+                </div>
+            </div>
+        </article>
 
-/* Pequeno marcador circular na linha do tempo */
-.timeline-badge {
-    position: absolute;
-    left: 31px;
-    top: 24px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: var(--primary-color);
-    border: 4px solid var(--bg-color);
-    box-shadow: 0 0 0 3px var(--secondary-color);
-    z-index: 2;
-}
+        <article class="timeline-item">
+            <div class="timeline-badge"></div>
+            <div class="timeline-panel">
+                <div class="panel-header">
+                    <span class="article-number">Artigo VI</span>
+                    <span class="article-date">1630 – 1654</span>
+                    <h2>Conflito Geopolítico e a Ocupação Holandesa</h2>
+                </div>
+                <div class="panel-body">
+                    <h3>O Açúcar sob Nova Direção: A União Ibérica e a Invasão da Companhia das Índias Ocidentais</h3>
+                    <p>O período entre 1630 e 1654 foi marcado pela ocupação holandesa no Nordeste açucareiro, capitaneada pela Companhia Holandesa das Índias Ocidentais (WIC). Esse conflito foi um desdobramento direto da União Ibérica (1580–1640), fase em que as coroas de Portugal e Espanha unificaram-se. Como a Espanha era inimiga política da Holanda, o comércio do açúcar brasileiro — anteriormente refinado e distribuído por mercadores flamengos — foi bloqueado, motivando a invasão militar de Pernambuco pelos holandeses.</p>
+                    <p>O governo do conde Maurício de Nassau (1637–1644) transformou Recife em um polo urbanístico e cultural moderno, implementando pontes, canais e tolerância religiosa para judeus e protestantes. No entanto, após a restauração do trono português e a saída de Nassau, a WIC passou a cobrar agressivamente os empréstimos concedidos aos senhores de engenho locais. Esse fator econômico desencadeou a Insurreição Pernambucana (1645–1654), uma revolta que uniu colonos brancos, negros (liderados por Henrique Dias) e indígenas (sob Filipe Camarão) na expulsão dos holandeses, fortalecendo um incipiente sentimento de identidade nativista.</p>
+                </div>
+            </div>
+        </article>
 
-/* Container de cada Artigo */
-.timeline-panel {
-    background: var(--panel-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    box-shadow: 0 5px 15px rgba(44, 37, 30, 0.06);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        <article class="timeline-item">
+            <div class="timeline-badge"></div>
+            <div class="timeline-panel">
+                <div class="panel-header">
+                    <span class="article-number">Artigo VII</span>
+                    <span class="article-date">1693 – 1695</span>
+                    <h2>O Bandeirantismo e o Fim de Palmares</h2>
+                </div>
+                <div class="panel-body">
+                    <h3>A Interiorização Forçada, a Destruição do Quilombo e o Surgimento da Economia Mineral</h3>
+                    <p>No final do século XVII, o declínio dos preços do açúcar brasileiro no mercado internacional, decorrente da concorrência da produção holandesa nas Antilhas, estimulou a busca por novas fontes de riqueza. Em São Paulo, uma capitania isolada e empobrecida, organizaram-se as Bandeiras: expedições armadas que penetravam o interior do continente para capturar indígenas e buscar metais preciosos, expandindo las fronteiras para além do Tratado de Tordesilhas.</p>
+                    <p>Paralelamente, a preservação da ordem escravista exigia o esmagamento das formas de resistência coletiva. Em 1694, o Quilombo dos Palmares, localizado na Serra da Barriga (AL) e liderado por Zumbi, foi destruído após décadas de resistência por tropas comandadas pelo bandeirante paulista Domingos Jorge Velho, contratado pelos latifundiários nordestinos. A execução de Zumbi, em 20 de novembro de 1695, coincidiu cronologicamente com as primeiras grandes descobertas de ouro de aluvião na região de Minas Gerais pelos mesmos bandeirantes paulistas, alterando em definitivo o eixo demográfico e econômico da colônia.</p>
+                </div>
+            </div>
+        </article>
 
-.timeline-panel:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(44, 37, 30, 0.12);
-}
+        <article class="timeline-item">
+            <div class="timeline-badge"></div>
+            <div class="timeline-panel">
+                <div class="panel-header">
+                    <span class="article-number">Artigo VIII</span>
+                    <span class="article-date">1707 – 1720</span>
+                    <h2>A Sociedade do Ouro e a Opressão Fiscal</h2>
+                </div>
+                <div class="panel-body">
+                    <h3>Urbanização, Rigor Metropolitano e as Revoltas Nativistas nas Gerais</h3>
+                    <p>A descoberta do ouro desencadeou o primeiro grande fluxo migratório interno do Brasil no século XVIII, originando uma sociedade marcadamente urbana e heterogênea em vilas como Ouro Preto e Mariana. Ao contrário do modelo rural do açúcar, a mineração permitiu o surgimento de uma camada média composta por intelectuais, funcionários públicos, militares, artesãos e escravos de ganho (que comercializavam serviços e podiam acumular pecúlio para comprar a alforria).</p>
+                    <p>O aumento da circulação do ouro gerou um aparato fiscal violento por parte de Portugal, que sofria com dívidas junto à Inglaterra. A Coroa impôs o imposto do Quinto e instalou as Casas de Fundição para evitar o contrabando. Esse arrocho fiscal gerou conflitos armados imediatos: a Guerra dos Emboabas (1707–1709), disputa entre paulistas e forasteiros pelo controle das minas; e a Revolta de Filipe dos Santos (1720), levante popular contra o monopólio das Casas de Fundição. A resposta metropolitana foi a execução das lideranças e o aumento do controle militar sobre a região.</p>
+                </div>
+            </div>
+        </article>
 
-/* Topo do artigo (Meta-informações) */
-.panel-header {
-    background-color: #faf8f5;
-    padding: 25px 30px;
-    border-bottom: 1px solid var(--border-color);
-    position: relative;
-}
+        <article class="timeline-item">
+            <div class="timeline-badge"></div>
+            <div class="timeline-panel">
+                <div class="panel-header">
+                    <span class="article-number">Artigo IX</span>
+                    <span class="article-date">1789 e 1798</span>
+                    <h2>O Iluminismo e as Conjurações Emancipacionistas</h2>
+                </div>
+                <div class="panel-body">
+                    <h3>A Crise do Pacto Colonial: Ideologia Iluminista e a Clivagem Social das Revoltas</h3>
+                    <p>No final do século XVIII, o esgotamento das jazidas de ouro coincidiu com a manutenção das exigências fiscais de Lisboa, que ameaçava aplicar a Derrama (cobrança compulsória de impostos atrasados). Sob a influência das ideias do Iluminismo europeu, da Independência dos EUA (1776) e da Revolução Francesa (1789), surgiram os primeiros movimentos com caráter explicitamente emancipacionistas e separatistas na colônia.</p>
+                    
+                    <div class="inner-box">
+                        <h4>A Inconfidência Mineira (1789)</h4>
+                        <p>Foi organizada pela elite socioeconômica e intelectual de Vila Rica (médicos, poetas, grandes proprietários). Defendiam a proclamação de uma República e o livre-comércio, mas omitiram o fim da escravidão, pois muitos líderes eram donos de escravizados. O alferes Tiradentes foi o único executado, servindo de bode expiatório devido à sua menor condição social.</p>
+                    </div>
 
-.article-number {
-    display: inline-block;
-    font-family: 'Cinzel', serif;
-    color: var(--primary-color);
-    font-weight: 700;
-    font-size: 0.95rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 5px;
-}
+                    <div class="inner-box">
+                        <h4>A Conjuração Baiana ou Revolta dos Alfaiates (1798)</h4>
+                        <p>Teve caráter eminentemente popular e racializado, composta por alfaiates, soldados, negros livres e escravizados. Influenciados pela fase jacobina da Revolução Francesa e pela Revolução do Haiti, defendiam a independência, a igualdade racial e a abolição total da escravidão. Suas lideranças negras foram sumariamente executadas e esquartejadas.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
 
-.article-date {
-    float: right;
-    font-family: 'Cinzel', serif;
-    background-color: var(--primary-color);
-    color: #ffffff;
-    padding: 3px 12px;
-    font-size: 0.85rem;
-    border-radius: 2px;
-    letter-spacing: 0.5px;
-}
+        <article class="timeline-item">
+            <div class="timeline-badge"></div>
+            <div class="timeline-panel">
+                <div class="panel-header">
+                    <span class="article-number">Artigo X</span>
+                    <span class="article-date">Janeiro de 1808</span>
+                    <h2>A Inversão Metropolitana e o Fim Prático do Estatuto Colonial</h2>
+                </div>
+                <div class="panel-body">
+                    <h3>O Impacto Joanino: A Transferência da Corte de Bragança e a Abertura dos Portos</h3>
+                    <p>Em janeiro de 1808, ocorreu um evento geopolítico inédito na história ocidental: a transferência de toda a corte de uma metrópole europeia para a sua colônia. Fugindo do avanço das tropas napoleônicas que violaram o Bloqueio Continental, o Príncipe Regente D. João VI, sua burocracia e a nobreza portuguesa estabeleceram a sede do Império no Rio de Janeiro, sob a escolta da marinha britânica.</p>
+                    <p>O primeiro grande ato de D. João VI foi a assinatura do decreto de Abertura dos Portos às Nações Amigas (28 de janeiro de 1808). Esse ato atendeu aos interesses comerciais do capitalismo industrial inglês e rompeu formalmente o Pacto Colonial, que obrigava o Brasil a comerciar apenas com Portugal. O Rio de Janeiro passou por um intenso processo de modernização cultural e material (criação do Banco do Brasil, da Imprensa Régia, da Academia de Belas Artes e do Jardim Botânico), convivendo com a contradição da expansão do mercado de escravizados do Valongo. Em 1815, a elevação do país a Reino Unido a Portugal e Algarves extinguiu juridicamente o status de colônia.</p>
+                </div>
+            </div>
+        </article>
 
-.panel-header h2 {
-    font-family: 'Cinzel', serif;
-    font-size: 1.6rem;
-    color: var(--text-color);
-    margin-top: 5px;
-    clear: both;
-}
+        <article class="timeline-item">
+            <div class="timeline-badge"></div>
+            <div class="timeline-panel">
+                <div class="panel-header">
+                    <span class="article-number">Artigo XI</span>
+                    <span class="article-date">7 de setembro de 1822</span>
+                    <h2>A Ruptura Política e a Manutenção das Estruturas Sociais</h2>
+                </div>
+                <div class="panel-body">
+                    <h3>A Independência do Brasil: O Arranjo Conservador entre a Elite Agrária e o Príncipe Regente</h3>
+                    <p>O processo que culminou em 7 de setembro de 1822 foi desencadeado pela Revolução Liberal do Porto (1820) in Portugal. A burguesia mercantil lusa exigiu o retorno de D. João VI a Lisboa e tentou reverter as medidas de autonomia comercial implementadas desde 1808, visando recolonizar o Brasil. Diante da ameaça de perda de liberdade econômica, a elite agrária centro-sulista uniu-se em torno do Príncipe Regente D. Pedro I, estimulando-o a liderar o processo de ruptura política.</p>
+                    <p>O "Grito do Ipiranga" e a posterior coroação de D. Pedro I como Imperador consolidaram a independência política, separando o Brasil de Portugal e preservando a integridade territorial do antigo vicereinado. No entanto, o pensamento que guiou o arranjo foi profundamente conservador: para evitar uma revolução popular ou a fragmentação territorial (como ocorrera na América Espanhola), as estruturas fundamentais herdadas do período colonial foram mantidas intactas. O Império do Brasil nasceu adotong o modelo monárquico, garantindo o latifúndio agroexportador e mantendo a instituição da escravidão africana como base econômica e social do novo Estado independente.</p>
+                </div>
+            </div>
+        </article>
 
-/* Corpo de texto do artigo */
-.panel-body {
-    padding: 30px;
-}
+    </main>
 
-.panel-body h3 {
-    font-size: 1.25rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    font-weight: 600;
-    line-height: 1.4;
-    border-left: 3px solid var(--secondary-color);
-    padding-left: 12px;
-}
+    <footer class="main-footer">
+        <p>&copy; 2026 - Memorial da História do Brasil. Desenvolvido para fins didáticos e de pesquisa.</p>
+    </footer>
 
-.panel-body p {
-    margin-bottom: 18px;
-    text-align: justify;
-}
-
-.panel-body p:last-child {
-    margin-bottom: 0;
-}
-
-/* Caixas internas extras (Usado no Artigo IX das Conjurações) */
-.inner-box {
-    background-color: #fbfbfa;
-    border: 1px solid var(--border-color);
-    border-left: 4px solid var(--primary-color);
-    padding: 20px;
-    margin-top: 25px;
-    border-radius: 0 4px 4px 0;
-}
-
-.inner-box h4 {
-    font-family: 'Cinzel', serif;
-    color: var(--text-color);
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-}
-
-/* ==========================================================================
-   Footer (Rodapé)
-   ========================================================================== */
-.main-footer {
-    text-align: center;
-    padding: 40px 0;
-    background-color: #1a1512;
-    color: #a89f91;
-    font-size: 0.95rem;
-    margin-top: 60px;
-    border-top: 4px solid var(--primary-color);
-}
-
-/* ==========================================================================
-   Responsividade (Layout Responsivo)
-   ========================================================================== */
-@media (max-width: 768px) {
-    .main-header h1 {
-        font-size: 2rem;
-    }
-
-    .main-header .subtitle {
-        font-size: 1rem;
-    }
-
-    .timeline-line {
-        left: 20px;
-    }
-
-    .timeline-item {
-        padding-left: 45px;
-    }
-
-    .timeline-badge {
-        left: 11px;
-    }
-
-    .article-date {
-        float: none;
-        display: inline-block;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-
-    .panel-header h2 {
-        font-size: 1.3rem;
-        margin-top: 10px;
-    }
-
-    .panel-body {
-        padding: 20px;
-    }
-    
-    .panel-body h3 {
-        font-size: 1.15rem;
-    }
-}
+</body>
+</html>
