@@ -1,101 +1,236 @@
-/* ==========================================================================
-   ESTILO VINTAGE / PERGAMINHO HISTÓRICO - HISTÓRIA DO BRASIL COLONIAL
-   ========================================================================== */
-
-/* --- Importação de Fontes Adicionais para Estética Vintage --- */
-/* --- Variáveis Globais de Cores e Tipografia --- */
-:root {
-    /* Cores de Fundo e Papel */
-    --bg-page: #e8decb;            /* Pergaminho envelhecido suave */
-    --panel-bg: #f5eedc;          /* Papel marfim/linho de documento antigo */
-    --inner-box-bg: #eae0cd;      /* Bloco de nota histórica manuscrita */
-    
-    /* Paleta Tipográfica e Tinta (Baixo contraste / Tinta ferrogálica) */
-    --text-primary: #3b2f2f;       /* Marrom sépia escuro para leitura confortável */
-    --text-secondary: #5c4a42;     /* Castanho queimado para subtítulos */
-    --accent-red: #8b261b;         /* Vermelho carmim / Cera de selo real */
-    --accent-gold: #b38b4d;        /* Dourado latão / Ouro envelhecido */
-    --border-sepia: #c8b99c;       /* Bordas de encadernação de época */
-    --border-dark: #8c7a6b;        /* Bordas duplas e divisórias */
-    
-    /* Tipografia */
-    --font-title: 'Cinzel', 'Cinzel Decorative', Georgia, serif;
-    --font-body: 'Lora', 'Playfair Display', Georgia, serif;
-}
-
-/* ==========================================================================
-   Resets e Configurações Gerais
-   ========================================================================== */
-*, *::before, *::after {
+/* RESET E CONFIGURAÇÕES GERAIS */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    background-color: var(--bg-page);
-    /* Padrão sutil simulando textura de papel pergaminho antigo via gradientes */
-    background-image: 
-        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.05) 100%),
-        linear-gradient(to right, rgba(139, 38, 27, 0.03), rgba(179, 139, 77, 0.03));
-    background-attachment: fixed;
-    color: var(--text-primary);
-    font-family: var(--font-body);
-    font-size: 1.1rem;
-    line-height: 1.8;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
+    background-color: #2b2622;
+    background-image: radial-gradient(#3a332d 1px, transparent 0);
+    background-size: 20px 20px;
+    font-family: 'IM Fell English', Georgia, serif;
+    color: #2c221e;
+    line-height: 1.6;
+    padding: 40px 15px;
 }
 
-.container {
-    max-width: 1000px;
+/* CONTAINER PRINCIPAL (ESTILO PAPEL ENVELHECIDO) */
+.paper-container {
+    max-width: 900px;
     margin: 0 auto;
-    padding: 0 25px;
-}
-
-/* ==========================================================================
-   Cabeçalho Principal (Frontispício Colonial)
-   ========================================================================== */
-.main-header {
-    text-align: center;
-    padding: 70px 20px 45px 20px;
-    background-color: #dfd2bb;
-    border-bottom: 4px double var(--accent-gold);
-    box-shadow: 0 4px 15px rgba(59, 47, 47, 0.08);
+    background-color: #f4ebd9;
+    /* Textura de papel antigo usando múltiplos gradientes */
+    background-image: 
+        radial-gradient(ellipse at center, rgba(255,255,255,0.5) 0%, rgba(244,235,217,0) 70%),
+        linear-gradient(to bottom, rgba(120,80,40,0.05), rgba(120,80,40,0.15));
+    border: 1px solid #c8b496;
+    box-shadow: 
+        0 0 10px rgba(0,0,0,0.5),
+        inset 0 0 80px rgba(139, 94, 60, 0.2);
+    padding: 50px 60px;
     position: relative;
-    margin-bottom: 60px;
 }
 
-/* Moldura sutil no cabeçalho */
-.main-header::before {
+/* EFECTO DE BORDA DUPLA NO PAPEL */
+.paper-container::before {
     content: '';
     position: absolute;
     top: 12px;
+    bottom: 12px;
     left: 12px;
     right: 12px;
-    bottom: 12px;
-    border: 1px solid var(--border-sepia);
+    border: 2px solid #5c4335;
     pointer-events: none;
 }
 
-.main-header h1 {
-    font-family: var(--font-title);
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: var(--accent-red);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.6);
-    margin-bottom: 12px;
+/* CABEÇALHO ESTILO JORNAL ANTIGO */
+.main-header {
+    text-align: center;
+    border-bottom: 3px double #3a2518;
+    padding-bottom: 25px;
+    margin-bottom: 40px;
 }
 
-.main-header .subtitle {
-    font-family: var(--font-body);
+.header-top {
+    font-family: 'Special Elite', cursive;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #664d3e;
+    margin-bottom: 10px;
+}
+
+.main-header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3.2rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #1a0f08;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 0px rgba(255,255,255,0.7);
+}
+
+.subtitle {
     font-style: italic;
-    font-size: 1.25rem;
-    color: var(--text-secondary);
-    max-width
+    font-size: 1.4rem;
+    color: #4a3525;
+    margin-bottom: 15px;
+}
+
+.header-border {
+    height: 2px;
+    background: #3a2518;
+    width: 60%;
+    margin: 15px auto;
+}
+
+.meta-info {
+    font-family: 'Special Elite', cursive;
+    font-size: 0.85rem;
+    color: #5c4335;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    text-transform: uppercase;
+}
+
+/* ESTRUTURA DA LINHA DO TEMPO */
+.timeline {
+    position: relative;
+}
+
+/* CARTÕES DE EVENTOS HISTÓRICOS */
+.timeline-card {
+    margin-bottom: 45px;
+    padding-bottom: 30px;
+    border-bottom: 1px dashed #a38f78;
+    position: relative;
+}
+
+.timeline-card:last-child {
+    border-bottom: none;
+}
+
+.card-header {
+    margin-bottom: 15px;
+}
+
+.date {
+    display: inline-block;
+    font-family: 'Special Elite', cursive;
+    background-color: #3a2518;
+    color: #f4ebd9;
+    padding: 3px 12px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 0px #8c6d58;
+}
+
+.card-header h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    color: #2b180d;
+    line-height: 1.3;
+}
+
+.card-subtitle {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #6b4c38;
+    font-weight: normal;
+    margin-top: 4px;
+}
+
+.card-body p {
+    font-size: 1.1rem;
+    text-align: justify;
+    text-indent: 30px;
+    margin-bottom: 12px;
+    color: #221811;
+}
+
+.card-body p::first-letter {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+/* CAIXA DE COMPARAÇÃO (EVENTO 1789/1798) */
+.comparison-box {
+    background-color: rgba(184, 155, 122, 0.15);
+    border-left: 4px solid #5c4335;
+    padding: 15px 20px;
+    margin-top: 15px;
+    font-size: 1.05rem;
+}
+
+.comparison-box p {
+    text-indent: 0;
+    margin-bottom: 10px;
+}
+
+.comparison-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* RODAPÉ VINTAGE */
+.main-footer {
+    text-align: center;
+    border-top: 3px double #3a2518;
+    padding-top: 25px;
+    margin-top: 20px;
+}
+
+.main-footer p {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.footer-stamp {
+    display: inline-block;
+    margin-top: 15px;
+    border: 2px solid #8b261d;
+    color: #8b261d;
+    font-family: 'Special Elite', cursive;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    transform: rotate(-3deg);
+    opacity: 0.85;
+}
+
+/* RESPONSIVIDADE PARA TELAS MENORES */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .paper-container {
+        padding: 30px 20px;
+    }
+    .main-header h1 {
+        font-size: 2.2rem;
+    }
+    .subtitle {
+        font-size: 1.1rem;
+    }
+    .meta-info {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .meta-info span:nth-child(2) {
+        display: none;
+    }
+    .card-header h2 {
+        font-size: 1.3rem;
+    }
+    .card-body p {
+        text-align: left;
+        text-indent: 0;
+    }
+}
