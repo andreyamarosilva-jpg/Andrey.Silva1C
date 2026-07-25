@@ -1,186 +1,251 @@
 /* ==========================================================================
-   ESTILO: ARQUIVO HISTÓRICO VINTAGE (MANUSCRITO)
-   - Fundo da Página: #f4efe4 (Papel envelhecido)
-   - Fundo das Caixas de Texto: #fcf9f2 (Tom claro e legível, sem fundo escuro)
-   - Cor das Fontes: #2a1f18 (Tinta antiga / Nanquim)
-   - BORDAS E DETALHES: #6b4c35 e #4a301e (Tons sépia e couro antigo)
+   Configurações Gerais e Resets (Vintage Suave / Baixo Contraste)
    ========================================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
-
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #eaddca;       /* Amêndoa fosco / Tom de papel kraft suave */
+    --text-color: #55433c;     /* Castanho médio envelhecido (sem tons escuros puros) */
+    --primary-color: #a66e4e;  /* Terracota desbotado pelo tempo */
+    --secondary-color: #c2b280;/* Tom de areia dourada / Latão opaco */
+    --panel-bg: #f4ebd9;       /* Marfim fosco texturizado */
+    --border-color: #d8c3a5;   /* Junções de encadernação suaves */
 }
 
 body {
-    font-family: 'EB Garamond', 'Georgia', serif;
-    background-color: #f4efe4;
-    color: #2a1f18; /* Cor escura apenas para o texto */
-    line-height: 1.7;
-    font-size: 18px;
-    padding-bottom: 50px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Lora', Georgia, serif;
+    line-height: 1.8;          /* Maior respiro entre linhas para leitura relaxada */
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;    /* Alinhamento tipográfico clássico */
 }
 
-/* Cabeçalho de Arquivo Histórico */
-.archive-header {
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ==========================================================================
+   Header (Estilo Gazeta Antiga)
+   ========================================================================== */
+.main-header {
     text-align: center;
-    border: 3px double #6b4c35;
-    padding: 25px 20px;
-    margin: 25px auto;
-    max-width: 950px;
-    background-color: #ebe3d3;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    padding: 70px 0 35px 0;
+    background-color: #ebdcb9; /* Cabeçalho em tom pastel pergaminho */
+    color: var(--text-color);
+    margin-bottom: 50px;
+    border-bottom: 3px double var(--border-color);
 }
 
-.archive-header::before, .archive-header::after {
-    content: "❖";
-    font-size: 16px;
-    color: #6b4c35;
+.main-header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.main-header .subtitle {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    opacity: 0.85;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.header-line {
+    width: 180px;
+    height: 1px;
+    background-color: var(--primary-color);
+    opacity: 0.4;
+    margin: 25px auto 0 auto;
+}
+
+/* ==========================================================================
+   Estrutura de Linha do Tempo (Eixo Histórico Organizado)
+   ========================================================================== */
+.timeline-container {
+    position: relative;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* Fio condutor em tom tabaco fosco */
+.timeline-line {
+    position: absolute;
+    left: 45px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--border-color);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 70px;
+    padding-left: 80px;
+}
+
+/* Marcador estilo ponto de costura antigo */
+.timeline-badge {
+    position: absolute;
+    left: 36px;
+    top: 26px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    border: 3px solid var(--panel-bg);
+    box-shadow: 0 0 0 2px var(--border-color);
+    z-index: 2;
+}
+
+/* Container de cada Artigo (Cartões Organizados) */
+.timeline-panel {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 35px; /* Organização interna simétrica */
+    box-shadow: 0 4px 10px rgba(85, 67, 60, 0.04); /* Sombra extremamente suave */
+}
+
+/* Topo do artigo (Alinhamento Limpo) */
+.panel-header {
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.article-number {
     display: block;
+    font-family: 'Cinzel', serif;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     margin-bottom: 4px;
 }
 
-.archive-seal {
+.article-date {
+    float: right;
     font-family: 'Cinzel', serif;
-    font-size: 0.85rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #7c5235;
-    font-weight: 700;
+    color: var(--text-color);
+    opacity: 0.8;
+    border: 1px dashed var(--border-color);
+    padding: 2px 10px;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
 }
 
-.archive-header h1 {
+.panel-header h2 {
     font-family: 'Cinzel', serif;
-    font-size: 2.1rem;
-    color: #3b2214;
-    font-weight: 900;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin: 8px 0;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-top: 6px;
+    clear: both;
+    line-height: 1.3;
 }
 
-.archive-header .archive-subtitle {
+/* Corpo de Texto (Hierarquia e Fluxo de Leitura) */
+.panel-body h3 {
+    font-family: 'Lora', Georgia, serif;
     font-style: italic;
-    font-size: 1rem;
-    color: #5a4231;
-}
-
-/* Menu de Navegação Solicitado */
-.archive-nav {
-    background-color: #e2d7c3;
-    border-top: 2px solid #6b4c35;
-    border-bottom: 2px solid #6b4c35;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-}
-
-.archive-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 12px 0;
-}
-
-.archive-nav li {
-    margin: 0 25px;
-}
-
-.archive-nav a {
-    text-decoration: none;
-    color: #4a301e;
-    font-family: 'Cinzel', serif;
-    font-weight: 700;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    padding: 5px 10px;
-    transition: all 0.2s ease-in-out;
-}
-
-.archive-nav a:hover {
-    color: #8c5a38;
-    border-bottom: 2px solid #8c5a38;
-    background-color: #ebd3be;
-}
-
-/* Container de Conteúdo */
-.container {
-    max-width: 950px;
-    margin: 35px auto;
-    padding: 0 20px;
-}
-
-.section-block {
-    margin-bottom: 50px;
-}
-
-.section-header-box {
-    background-color: #4a301e;
-    color: #f4efe4;
-    padding: 12px 20px;
-    border-left: 6px solid #8c5a38;
-    margin-bottom: 22px;
-}
-
-.section-header-box h2 {
-    font-family: 'Cinzel', serif;
-    font-size: 1.35rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-/* Cartões do Manuscrito com Fundo Claro */
-.manuscript-card {
-    background-color: #fcf9f2; /* Fundo levemente claro/amarelado */
-    border: 1px solid #d8ccb8;
-    border-left: 5px solid #6b4c35;
-    padding: 22px 25px;
-    margin-bottom: 22px;
-    box-shadow: 2px 3px 6px rgba(0,0,0,0.02);
-}
-
-.manuscript-card h3 {
-    font-family: 'Cinzel', serif;
-    font-size: 1.15rem;
-    color: #4a301e;
-    margin-bottom: 6px;
-    font-weight: 700;
-}
-
-.manuscript-card .doc-title {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
     font-weight: 600;
-    font-style: italic;
-    font-size: 1rem;
-    color: #7c5235;
-    margin-bottom: 12px;
-    border-bottom: 1px dashed #d8ccb8;
-    padding-bottom: 6px;
+    line-height: 1.4;
 }
 
-.manuscript-card p {
+.panel-body p {
+    margin-bottom: 22px; /* Espaçamento controlado entre blocos de informação */
     text-align: justify;
-    margin-bottom: 12px;
-    color: #2a1f18; /* Apenas o texto em tom escuro */
-    text-indent: 1.5em;
+    hyphens: auto;
 }
 
-.manuscript-card p:last-child {
+.panel-body p:last-child {
     margin-bottom: 0;
 }
 
-/* Rodapé */
-.archive-footer {
-    text-align: center;
-    padding: 25px;
+/* Caixas Internas (Módulos de Destaque Organizados) */
+.inner-box {
+    background-color: rgba(216, 195, 165, 0.25);
+    border: 1px solid var(--border-color);
+    padding: 24px;
+    margin-top: 25px;
+    border-radius: 4px;
+}
+
+.inner-box h4 {
     font-family: 'Cinzel', serif;
-    font-size: 0.85rem;
-    color: #6b4c35;
-    border-top: 1px solid #d8ccb8;
-    margin-top: 50px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+}
+
+.inner-box p {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Footer (Rodapé Harmônico)
+   ========================================================================== */
+.main-footer {
+    text-align: center;
+    padding: 45px 0;
+    background-color: #ebdcb9;
+    color: var(--text-color);
+    opacity: 0.9;
+    font-size: 0.9rem;
+    margin-top: 60px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* ==========================================================================
+   Responsividade Adaptável
+   ========================================================================== */
+@media (max-width: 768px) {
+    .main-header h1 {
+        font-size: 1.9rem;
+    }
+
+    .timeline-line {
+        left: 25px;
+    }
+
+    .timeline-item {
+        padding-left: 50px;
+        margin-bottom: 45px;
+    }
+
+    .timeline-badge {
+        left: 17px;
+        top: 22px;
+    }
+
+    .article-date {
+        float: none;
+        display: inline-block;
+        margin-top: 8px;
+    }
+
+    .timeline-panel {
+        padding: 22px;
+    }
+
+    .panel-header h2 {
+        font-size: 1.3rem;
+    }
 }
