@@ -1,9 +1,12 @@
-/* Paleta de Cores Vintage Claro:
-   Fundo do site: #f7f2e7 (Creme/Pergaminho suave)
-   Fundo do Texto: #fffdf9 (Branco antigo / Papiro limpo)
-   Bordas e Detalhes: #8b5a2b (Sépia / Bronze aquecido)
-   Texto Principal: #2b221e (Castanho escuro / Nanquim envelhecido - fácil leitura)
-*/
+/* ==========================================================================
+   ESTILO: ARQUIVO HISTÓRICO / MANUSCRITO ANTIGO
+   - Papel de Fundo: #f4efe4 (Pergaminho envelhecido suave)
+   - Cartões de Leitura: #fcf9f2 (Tom papiro claro - alta legibilidade, sem fundo escuro)
+   - Cor do Texto: #2a1f18 (Tinta de Nanquim antiga / Castanho escuro)
+   - Acabamentos: #6b4c35 / #4a301e (Tons de couro, sépia e laca antiga)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
 
 * {
     box-sizing: border-box;
@@ -12,57 +15,71 @@
 }
 
 body {
-    font-family: 'Georgia', 'Times New Roman', serif;
-    background-color: #f7f2e7;
-    color: #2b221e;
+    font-family: 'EB Garamond', 'Georgia', serif;
+    background-color: #f4efe4;
+    color: #2a1f18;
     line-height: 1.7;
-    font-size: 16px;
-    padding-bottom: 40px;
+    font-size: 18px;
+    padding-bottom: 50px;
 }
 
-/* Cabeçalho */
-.vintage-header {
+/* Cabeçalho do Arquivo */
+.archive-header {
     text-align: center;
-    padding: 30px 20px 15px 20px;
-    background-color: #f0e6d2;
-    border-bottom: 3px double #8b5a2b;
+    border: 3px double #6b4c35;
+    padding: 25px 20px;
+    margin: 20px auto;
+    max-width: 1000px;
+    background-color: #ebe3d3;
+    position: relative;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
 }
 
-.vintage-header .super-title {
-    font-size: 0.85rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #8b5a2b;
+.archive-header::before, .archive-header::after {
+    content: "❖";
+    font-size: 16px;
+    color: #6b4c35;
+    display: block;
     margin-bottom: 5px;
 }
 
-.vintage-header h1 {
-    font-size: 2.2rem;
-    color: #4a2e1b;
-    font-weight: normal;
+.archive-seal {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    letter-spacing: 4px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    color: #7c5235;
+    font-weight: 700;
 }
 
-.vintage-header .subtitle {
+.archive-header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: #3b2214;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 8px 0;
+}
+
+.archive-header .archive-subtitle {
     font-style: italic;
-    color: #6e5849;
-    margin-top: 5px;
     font-size: 1rem;
+    color: #5a4231;
 }
 
 /* Barra de Navegação Solicitada */
-.navbar {
-    background-color: #e8dcc8;
-    border-top: 1px solid #c5b398;
-    border-bottom: 2px solid #8b5a2b;
+.archive-nav {
+    background-color: #e2d7c3;
+    border-top: 2px solid #6b4c35;
+    border-bottom: 2px solid #6b4c35;
     position: sticky;
     top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-.navbar ul {
+.archive-nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
@@ -70,90 +87,102 @@ body {
     padding: 10px 0;
 }
 
-.navbar li {
-    margin: 5px 18px;
+.archive-nav li {
+    margin: 5px 15px;
 }
 
-.navbar a {
+.archive-nav a {
     text-decoration: none;
-    color: #5a3d28;
-    font-weight: bold;
-    font-size: 0.95rem;
+    color: #4a301e;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.2s ease-in-out;
+    letter-spacing: 1.5px;
+    padding: 4px 8px;
+    transition: all 0.2s ease-in-out;
 }
 
-.navbar a:hover {
-    color: #8b5a2b;
-    border-bottom: 2px solid #8b5a2b;
+.archive-nav a:hover {
+    color: #8c5a38;
+    border-bottom: 2px solid #8c5a38;
+    background-color: #ebd3be;
 }
 
-/* Conteúdo Principal */
+/* Container de Conteúdo */
 .container {
-    max-width: 900px;
-    margin: 30px auto;
+    max-width: 950px;
+    margin: 35px auto;
     padding: 0 20px;
 }
 
 .section-block {
-    margin-bottom: 40px;
+    margin-bottom: 45px;
 }
 
-.main-section-title {
-    background-color: #8b5a2b;
-    color: #f7f2e7;
-    padding: 10px 18px;
+.section-header-box {
+    background-color: #4a301e;
+    color: #f4efe4;
+    padding: 12px 20px;
+    border-left: 6px solid #8c5a38;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.06);
+}
+
+.section-header-box h2 {
+    font-family: 'Cinzel', serif;
     font-size: 1.3rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 20px;
-    border-radius: 2px;
+    font-weight: 700;
 }
 
-/* Cartões de Artigo com Fundo Claro */
-.article-card {
-    background-color: #fffdf9;
-    border: 1px solid #dcd1bf;
-    border-left: 5px solid #8b5a2b;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 2px;
-    box-shadow: 2px 2px 8px rgba(139, 90, 43, 0.05);
+/* Cartões do Manuscrito */
+.manuscript-card {
+    background-color: #fcf9f2;
+    border: 1px solid #d8ccb8;
+    border-left: 5px solid #6b4c35;
+    padding: 22px 25px;
+    margin-bottom: 22px;
+    box-shadow: 2px 3px 8px rgba(0,0,0,0.03);
 }
 
-.article-card h3 {
-    font-size: 1.2rem;
-    color: #5c3a21;
-    margin-bottom: 5px;
-    border-bottom: 1px solid #ede4d4;
-    padding-bottom: 5px;
+.manuscript-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    color: #4a301e;
+    margin-bottom: 6px;
+    font-weight: 700;
 }
 
-.article-card .article-subtitle {
-    font-size: 0.95rem;
+.manuscript-card .doc-title {
+    font-weight: 600;
     font-style: italic;
-    color: #7a5c43;
+    font-size: 1rem;
+    color: #7c5235;
     margin-bottom: 12px;
-    font-weight: bold;
+    border-bottom: 1px dashed #d8ccb8;
+    padding-bottom: 6px;
 }
 
-.article-card p {
+.manuscript-card p {
     text-align: justify;
-    margin-bottom: 10px;
-    color: #2b221e;
+    margin-bottom: 12px;
+    color: #2a1f18;
+    text-indent: 1.5em;
 }
 
-.article-card p:last-child {
+.manuscript-card p:last-child {
     margin-bottom: 0;
 }
 
 /* Rodapé */
-.vintage-footer {
+.archive-footer {
     text-align: center;
-    padding: 20px;
+    padding: 25px;
+    font-family: 'Cinzel', serif;
     font-size: 0.85rem;
-    color: #7a5c43;
-    border-top: 1px solid #dcd1bf;
-    margin-top: 40px;
+    color: #6b4c35;
+    border-top: 1px solid #d8ccb8;
+    margin-top: 50px;
 }
