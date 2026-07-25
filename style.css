@@ -1,17 +1,9 @@
-/* ==========================================================================
-   FOLHA DE ESTILO: ARQUIVO HISTÓRICO VINTAGE (SEPARADOS NA HORIZONTAL)
-   ========================================================================== */
-
-/* --- Configurações Gerais e Paleta de Cores --- */
-:root {
-    --bg-parchment: #f2e6ce;      /* Cor de fundo pergaminho claro */
-    --bg-parchment-dark: #e6d5b3; /* Tom mais escuro para os cards */
-    --ink-dark: #2b231d;          /* Tinta antiga / quase preto */
-    --ink-muted: #594a3c;         /* Tinta desbotada para textos secundários */
-    --gold-vintage: #8c6d31;      /* Dourado envelhecido para detalhes */
-    --iron-sepia: #403225;        /* Tom sépia para bordas e marcadores */
-    --line-color: #a69177;        /* Cor dos divisores horizontais */
-}
+/* Paleta de Cores Vintage Claro:
+   Fundo do site: #f7f2e7 (Creme/Pergaminho suave)
+   Fundo do Texto: #fffdf9 (Branco antigo / Papiro limpo)
+   Bordas e Detalhes: #8b5a2b (Sépia / Bronze aquecido)
+   Texto Principal: #2b221e (Castanho escuro / Nanquim envelhecido - fácil leitura)
+*/
 
 * {
     box-sizing: border-box;
@@ -20,218 +12,148 @@
 }
 
 body {
-    background-color: var(--bg-parchment);
-    /* Efeito sutil de textura de papel antigo */
-    background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 0),
-                      linear-gradient(to bottom, rgba(230,213,179,0.3), rgba(242,230,206,0.3));
-    background-size: 4px 4px, 100% 100%;
-    color: var(--ink-dark);
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 1.25rem;
-    line-height: 1.6;
-    padding: 2rem 1rem;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background-color: #f7f2e7;
+    color: #2b221e;
+    line-height: 1.7;
+    font-size: 16px;
+    padding-bottom: 40px;
 }
 
-/* --- Cabeçalho Histórico --- */
-.main-header {
+/* Cabeçalho */
+.vintage-header {
     text-align: center;
-    max-width: 900px;
-    margin: 0 auto 3rem auto;
-    padding: 2rem;
+    padding: 30px 20px 15px 20px;
+    background-color: #f0e6d2;
+    border-bottom: 3px double #8b5a2b;
 }
 
-.header-decor {
-    height: 4px;
-    border-top: 1px solid var(--gold-vintage);
-    border-bottom: 1px solid var(--gold-vintage);
-    margin: 1.5rem auto;
-    position: relative;
-    max-width: 60%;
+.vintage-header .super-title {
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #8b5a2b;
+    margin-bottom: 5px;
 }
 
-.header-decor::before {
-    content: "❖";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--bg-parchment);
-    padding: 0 15px;
-    color: var(--gold-vintage);
+.vintage-header h1 {
+    font-size: 2.2rem;
+    color: #4a2e1b;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.vintage-header .subtitle {
+    font-style: italic;
+    color: #6e5849;
+    margin-top: 5px;
     font-size: 1rem;
 }
 
-.main-header h1 {
-    font-family: 'Cinzel', serif;
-    font-weight: 900;
-    font-size: 2.2rem;
-    letter-spacing: 1px;
-    color: var(--iron-sepia);
+/* Barra de Navegação Solicitada */
+.navbar {
+    background-color: #e8dcc8;
+    border-top: 1px solid #c5b398;
+    border-bottom: 2px solid #8b5a2b;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px 0;
+}
+
+.navbar li {
+    margin: 5px 18px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #5a3d28;
+    font-weight: bold;
+    font-size: 0.95rem;
     text-transform: uppercase;
-    line-height: 1.2;
-    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+    transition: color 0.2s ease-in-out;
 }
 
-.main-header h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 400;
+.navbar a:hover {
+    color: #8b5a2b;
+    border-bottom: 2px solid #8b5a2b;
+}
+
+/* Conteúdo Principal */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.section-block {
+    margin-bottom: 40px;
+}
+
+.main-section-title {
+    background-color: #8b5a2b;
+    color: #f7f2e7;
+    padding: 10px 18px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    border-radius: 2px;
+}
+
+/* Cartões de Artigo com Fundo Claro */
+.article-card {
+    background-color: #fffdf9;
+    border: 1px solid #dcd1bf;
+    border-left: 5px solid #8b5a2b;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 8px rgba(139, 90, 43, 0.05);
+}
+
+.article-card h3 {
+    font-size: 1.2rem;
+    color: #5c3a21;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ede4d4;
+    padding-bottom: 5px;
+}
+
+.article-card .article-subtitle {
+    font-size: 0.95rem;
     font-style: italic;
-    font-size: 1.5rem;
-    color: var(--ink-muted);
+    color: #7a5c43;
+    margin-bottom: 12px;
+    font-weight: bold;
 }
 
-/* --- Container da Linha do Tempo --- */
-.timeline-container {
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 1rem 0;
-}
-
-/* --- Itens / Eventos (Separados Horizontalmente) --- */
-.timeline-item {
-    position: relative;
-    width: 100%;
-    margin-bottom: 5rem; /* Espaçamento generoso na vertical entre os textos */
-}
-
-/* Linha Divisória Horizontal Clássica entre os itens */
-.timeline-item:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    bottom: -2.5rem; /* Posiciona exatamente no meio do espaço vago */
-    left: 10%;
-    width: 80%;
-    height: 1px;
-    background: radial-gradient(circle, var(--line-color) 0%, transparent 100%);
-}
-
-/* Bloco de Conteúdo (Estilo Folha de Arquivo Única) */
-.timeline-content {
-    position: relative;
-    width: 100%;
-    background-color: var(--bg-parchment-dark);
-    padding: 3rem;
-    border: 1px solid #d4c29d;
-    box-shadow: 0 4px 20px rgba(43, 35, 29, 0.08), 
-                inset 0 0 30px rgba(0, 0, 0, 0.03);
-    border-radius: 3px;
-}
-
-/* Margens internas dos parágrafos */
-.timeline-content p {
-    margin-bottom: 1.2rem;
+.article-card p {
     text-align: justify;
-    text-indent: 1.5rem; /* Parágrafo clássico de livro */
+    margin-bottom: 10px;
+    color: #2b221e;
 }
-.timeline-content p:last-of-type {
+
+.article-card p:last-child {
     margin-bottom: 0;
 }
 
-/* --- Elementos Decorativos Internos --- */
-
-/* Pequeno marcador discreto no topo de cada bloco */
-.timeline-marker {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 24px;
-    height: 24px;
-    background: var(--bg-parchment-dark);
-    border: 1px solid var(--gold-vintage);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.timeline-marker::before {
-    content: '❖';
-    font-size: 0.65rem;
-    color: var(--gold-vintage);
-}
-
-/* Exibição Elegante da Data */
-.timeline-date {
-    display: block;
+/* Rodapé */
+.vintage-footer {
     text-align: center;
-    font-family: 'Cinzel', serif;
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: var(--gold-vintage);
-    border-bottom: 1px dashed var(--line-color);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
-    letter-spacing: 2px;
-}
-
-/* --- Tipografia Interna dos Artigos --- */
-.article-number {
-    font-family: 'Cinzel', serif;
-    font-weight: 700;
-    font-size: 1.3rem;
-    color: var(--iron-sepia);
-    line-height: 1.4;
-    margin-bottom: 0.3rem;
-    text-align: center;
-}
-
-.article-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    font-style: italic;
-    font-size: 1.2rem;
-    color: var(--ink-muted);
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-/* --- Estilização de Citações (Blockquotes) --- */
-.timeline-content blockquote {
-    margin: 1.5rem 0;
-    padding: 1rem 1.5rem;
-    border-left: 2px solid var(--gold-vintage);
-    background: rgba(255, 255, 255, 0.25);
-    font-style: italic;
-    font-size: 1.15rem;
-}
-
-.timeline-content blockquote strong {
-    font-family: 'Cinzel', serif;
-    font-style: normal;
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    color: var(--iron-sepia);
-}
-
-/* --- Rodapé --- */
-.main-footer {
-    text-align: center;
-    margin-top: 5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--line-color);
-    max-width: 40%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.main-footer p {
-    font-family: 'Cinzel', serif;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    color: var(--ink-muted);
-    text-transform: uppercase;
-}
-
-/* ==========================================================================
-   ADAPTAÇÃO PARA TELAS PEQUENAS (MOBILE)
-   ========================================================================== */
-@media (max-width: 600px) {
-    .timeline-content {
-        padding: 1.5rem;
-    }
-    .timeline-item {
-        margin-bottom: 4rem;
-    }
+    padding: 20px;
+    font-size: 0.85rem;
+    color: #7a5c43;
+    border-top: 1px solid #dcd1bf;
+    margin-top: 40px;
 }
