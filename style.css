@@ -1,9 +1,9 @@
 /* ==========================================================================
-   ESTILO: ARQUIVO HISTÓRICO / MANUSCRITO ANTIGO
-   - Papel de Fundo: #f4efe4 (Pergaminho envelhecido suave)
-   - Cartões de Leitura: #fcf9f2 (Tom papiro claro - alta legibilidade, sem fundo escuro)
-   - Cor do Texto: #2a1f18 (Tinta de Nanquim antiga / Castanho escuro)
-   - Acabamentos: #6b4c35 / #4a301e (Tons de couro, sépia e laca antiga)
+   ESTILO: ARQUIVO HISTÓRICO VINTAGE (MANUSCRITO)
+   - Fundo da Página: #f4efe4 (Papel envelhecido)
+   - Fundo das Caixas de Texto: #fcf9f2 (Tom claro e legível, sem fundo escuro)
+   - Cor das Fontes: #2a1f18 (Tinta antiga / Nanquim)
+   - BORDAS E DETALHES: #6b4c35 e #4a301e (Tons sépia e couro antigo)
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
@@ -17,22 +17,21 @@
 body {
     font-family: 'EB Garamond', 'Georgia', serif;
     background-color: #f4efe4;
-    color: #2a1f18;
+    color: #2a1f18; /* Cor escura apenas para o texto */
     line-height: 1.7;
     font-size: 18px;
     padding-bottom: 50px;
 }
 
-/* Cabeçalho do Arquivo */
+/* Cabeçalho de Arquivo Histórico */
 .archive-header {
     text-align: center;
     border: 3px double #6b4c35;
     padding: 25px 20px;
-    margin: 20px auto;
-    max-width: 1000px;
+    margin: 25px auto;
+    max-width: 950px;
     background-color: #ebe3d3;
-    position: relative;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
 }
 
 .archive-header::before, .archive-header::after {
@@ -40,13 +39,13 @@ body {
     font-size: 16px;
     color: #6b4c35;
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 
 .archive-seal {
     font-family: 'Cinzel', serif;
     font-size: 0.85rem;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     text-transform: uppercase;
     color: #7c5235;
     font-weight: 700;
@@ -54,7 +53,7 @@ body {
 
 .archive-header h1 {
     font-family: 'Cinzel', serif;
-    font-size: 2rem;
+    font-size: 2.1rem;
     color: #3b2214;
     font-weight: 900;
     letter-spacing: 2px;
@@ -68,7 +67,7 @@ body {
     color: #5a4231;
 }
 
-/* Barra de Navegação Solicitada */
+/* Menu de Navegação Solicitado */
 .archive-nav {
     background-color: #e2d7c3;
     border-top: 2px solid #6b4c35;
@@ -76,7 +75,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
 }
 
 .archive-nav ul {
@@ -84,11 +83,11 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 10px 0;
+    padding: 12px 0;
 }
 
 .archive-nav li {
-    margin: 5px 15px;
+    margin: 0 25px;
 }
 
 .archive-nav a {
@@ -96,10 +95,10 @@ body {
     color: #4a301e;
     font-family: 'Cinzel', serif;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    padding: 4px 8px;
+    padding: 5px 10px;
     transition: all 0.2s ease-in-out;
 }
 
@@ -117,7 +116,7 @@ body {
 }
 
 .section-block {
-    margin-bottom: 45px;
+    margin-bottom: 50px;
 }
 
 .section-header-box {
@@ -125,26 +124,25 @@ body {
     color: #f4efe4;
     padding: 12px 20px;
     border-left: 6px solid #8c5a38;
-    margin-bottom: 20px;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.06);
+    margin-bottom: 22px;
 }
 
 .section-header-box h2 {
     font-family: 'Cinzel', serif;
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 700;
 }
 
-/* Cartões do Manuscrito */
+/* Cartões do Manuscrito com Fundo Claro */
 .manuscript-card {
-    background-color: #fcf9f2;
+    background-color: #fcf9f2; /* Fundo levemente claro/amarelado */
     border: 1px solid #d8ccb8;
     border-left: 5px solid #6b4c35;
     padding: 22px 25px;
     margin-bottom: 22px;
-    box-shadow: 2px 3px 8px rgba(0,0,0,0.03);
+    box-shadow: 2px 3px 6px rgba(0,0,0,0.02);
 }
 
 .manuscript-card h3 {
@@ -168,7 +166,7 @@ body {
 .manuscript-card p {
     text-align: justify;
     margin-bottom: 12px;
-    color: #2a1f18;
+    color: #2a1f18; /* Apenas o texto em tom escuro */
     text-indent: 1.5em;
 }
 
