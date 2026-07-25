@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Configurações Gerais e Resets (Vintage Suave / Baixo Contraste)
+   Configurações Gerais e Resets (Estilo Vintage / Enciclopédia)
    ========================================================================== */
 * {
     margin: 0;
@@ -8,217 +8,253 @@
 }
 
 :root {
-    --bg-color: #eaddca;       /* Amêndoa fosco / Tom de papel kraft suave */
-    --text-color: #55433c;     /* Castanho médio envelhecido (sem tons escuros puros) */
-    --primary-color: #a66e4e;  /* Terracota desbotado pelo tempo */
-    --secondary-color: #c2b280;/* Tom de areia dourada / Latão opaco */
-    --panel-bg: #f4ebd9;       /* Marfim fosco texturizado */
-    --border-color: #d8c3a5;   /* Junções de encadernação suaves */
+    --bg-color: #f3ede0;       /* Tom pergaminho/papel envelhecido mais denso */
+    --text-color: #2b221a;     /* Marrom sépia escuro (tinta ferrogálica antiga) */
+    --primary-color: #702011;  /* Vermelho Borgonha / Sangue de boi colonial */
+    --secondary-color: #b58443;/* Dourado fosco / Latão envelhecido */
+    --panel-bg: #fbf9f3;       /* Papel linho claro para os blocos de texto */
+    --border-color: #d1c4a8;   /* Bordas de desgaste do papel */
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: 'Lora', Georgia, serif;
-    line-height: 1.8;          /* Maior respiro entre linhas para leitura relaxada */
-    font-size: 1.15rem;
-    letter-spacing: 0.02em;    /* Alinhamento tipográfico clássico */
+    line-height: 1.75;
+    font-size: 1.1rem;
+    /* Suavização de renderização de fontes antigas */
+    -webkit-font-smoothing: antialiased;
 }
 
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 20px;
 }
 
 /* ==========================================================================
-   Header (Estilo Gazeta Antiga)
+   Header (Cabeçalho Estilo Frontispício)
    ========================================================================== */
 .main-header {
     text-align: center;
-    padding: 70px 0 35px 0;
-    background-color: #ebdcb9; /* Cabeçalho em tom pastel pergaminho */
-    color: var(--text-color);
-    margin-bottom: 50px;
-    border-bottom: 3px double var(--border-color);
+    padding: 80px 0 40px 0;
+    background-color: #1a1410;
+    color: #f3ede0;
+    margin-bottom: 60px;
+    border-bottom: 6px double var(--secondary-color);
+    box-shadow: inset 0 -10px 20px rgba(0,0,0,0.3);
 }
 
 .main-header h1 {
     font-family: 'Cinzel', serif;
-    font-size: 2.6rem;
+    font-size: 3.2rem;
     font-weight: 700;
     letter-spacing: 3px;
-    color: var(--primary-color);
-    margin-bottom: 12px;
+    color: var(--secondary-color);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    margin-bottom: 15px;
 }
 
 .main-header .subtitle {
     font-family: 'Lora', Georgia, serif;
     font-style: italic;
-    font-size: 1.2rem;
-    opacity: 0.85;
-    max-width: 650px;
+    font-size: 1.3rem;
+    color: #d1c4a8;
+    max-width: 700px;
     margin: 0 auto;
 }
 
 .header-line {
-    width: 180px;
-    height: 1px;
-    background-color: var(--primary-color);
-    opacity: 0.4;
-    margin: 25px auto 0 auto;
+    width: 250px;
+    height: 4px;
+    border-top: 1px solid var(--secondary-color);
+    border-bottom: 1px solid var(--secondary-color);
+    background-color: transparent;
+    margin: 30px auto 0 auto;
 }
 
 /* ==========================================================================
-   Estrutura de Linha do Tempo (Eixo Histórico Organizado)
+   Estrutura da Linha do Tempo (Eixo Histórico)
    ========================================================================== */
 .timeline-container {
     position: relative;
-    max-width: 850px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 30px 20px;
+    padding: 20px;
 }
 
-/* Fio condutor em tom tabaco fosco */
+/* Linha vertical com aspecto de fio tipográfico antigo */
 .timeline-line {
     position: absolute;
     left: 45px;
     top: 0;
     bottom: 0;
     width: 2px;
-    background-color: var(--border-color);
+    background: linear-gradient(to bottom, transparent, var(--secondary-color) 10%, var(--secondary-color) 90%, transparent);
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: 70px;
-    padding-left: 80px;
+    margin-bottom: 80px;
+    padding-left: 85px;
 }
 
-/* Marcador estilo ponto de costura antigo */
+/* Marcador estilo selo de cera ou brasão */
 .timeline-badge {
     position: absolute;
-    left: 36px;
-    top: 26px;
-    width: 20px;
-    height: 20px;
+    left: 34px;
+    top: 28px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    background-color: var(--secondary-color);
-    border: 3px solid var(--panel-bg);
-    box-shadow: 0 0 0 2px var(--border-color);
+    background-color: var(--primary-color);
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 0 0 4px var(--bg-color), 2px 2px 4px rgba(0,0,0,0.15);
     z-index: 2;
 }
 
-/* Container de cada Artigo (Cartões Organizados) */
+/* Container de cada Artigo (Cartela Antiga) */
 .timeline-panel {
     background: var(--panel-bg);
     border: 1px solid var(--border-color);
-    border-radius: 6px;
-    padding: 35px; /* Organização interna simétrica */
-    box-shadow: 0 4px 10px rgba(85, 67, 60, 0.04); /* Sombra extremamente suave */
+    border-radius: 2px;
+    box-shadow: 3px 3px 12px rgba(43, 34, 26, 0.08);
+    position: relative;
 }
 
-/* Topo do artigo (Alinhamento Limpo) */
+/* Cantoneiras decorativas sutis simuladas por CSS */
+.timeline-panel::before {
+    content: '';
+    position: absolute;
+    top: 5px; left: 5px; right: 5px; bottom: 5px;
+    border: 1px solid rgba(181, 132, 67, 0.2);
+    pointer-events: none;
+}
+
+/* Topo do artigo (Estilo Manuscrito / Registro) */
 .panel-header {
-    margin-bottom: 25px;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 15px;
+    background-color: #f5eedc;
+    padding: 30px 35px 20px 35px;
+    border-bottom: 1px dashed var(--border-color);
 }
 
 .article-number {
-    display: block;
+    display: inline-block;
     font-family: 'Cinzel', serif;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 4px;
 }
 
 .article-date {
     float: right;
     font-family: 'Cinzel', serif;
-    color: var(--text-color);
-    opacity: 0.8;
-    border: 1px dashed var(--border-color);
-    padding: 2px 10px;
-    font-size: 0.8rem;
-    letter-spacing: 0.5px;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 2px 14px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .panel-header h2 {
     font-family: 'Cinzel', serif;
-    font-size: 1.5rem;
-    color: var(--text-color);
-    margin-top: 6px;
+    font-size: 1.7rem;
+    color: var(--primary-color);
+    margin-top: 10px;
     clear: both;
     line-height: 1.3;
 }
 
-/* Corpo de Texto (Hierarquia e Fluxo de Leitura) */
+/* Corpo de texto do artigo (Tipografia de Livro) */
+.panel-body {
+    padding: 35px;
+}
+
 .panel-body h3 {
     font-family: 'Lora', Georgia, serif;
     font-style: italic;
-    font-size: 1.2rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin-bottom: 25px;
     font-weight: 600;
     line-height: 1.4;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
 }
 
 .panel-body p {
-    margin-bottom: 22px; /* Espaçamento controlado entre blocos de informação */
+    margin-bottom: 20px;
     text-align: justify;
-    hyphens: auto;
+    text-indent: 30px; /* Parágrafo clássico de livro */
 }
 
 .panel-body p:last-child {
     margin-bottom: 0;
 }
 
-/* Caixas Internas (Módulos de Destaque Organizados) */
+/* Detalhe Vintage: Primeira letra do primeiro parágrafo estilizada */
+.panel-body p:first-of-type::first-letter {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    float: left;
+    line-height: 1;
+    margin-right: 8px;
+    margin-top: 4px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Caixas internas (Documentos anexos ou citações) */
 .inner-box {
-    background-color: rgba(216, 195, 165, 0.25);
+    background-color: #f2ebd9;
     border: 1px solid var(--border-color);
-    padding: 24px;
-    margin-top: 25px;
-    border-radius: 4px;
+    border-top: 3px solid var(--secondary-color);
+    padding: 25px;
+    margin-top: 30px;
 }
 
 .inner-box h4 {
     font-family: 'Cinzel', serif;
-    color: var(--text-color);
-    margin-bottom: 10px;
-    font-size: 1.05rem;
-    letter-spacing: 0.5px;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
 }
 
 .inner-box p {
+    text-indent: 0;
     font-size: 1rem;
-    margin-bottom: 0;
+    font-style: italic;
 }
 
 /* ==========================================================================
-   Footer (Rodapé Harmônico)
+   Footer (Rodapé Estilo Assinatura Editorial)
    ========================================================================== */
 .main-footer {
     text-align: center;
-    padding: 45px 0;
-    background-color: #ebdcb9;
-    color: var(--text-color);
-    opacity: 0.9;
-    font-size: 0.9rem;
-    margin-top: 60px;
-    border-top: 1px solid var(--border-color);
+    padding: 50px 0;
+    background-color: #1a1410;
+    color: #a89a84;
+    font-size: 0.95rem;
+    margin-top: 80px;
+    border-top: 4px double var(--secondary-color);
+    letter-spacing: 1px;
 }
 
 /* ==========================================================================
-   Responsividade Adaptável
+   Responsividade (Layout Adaptável)
    ========================================================================== */
 @media (max-width: 768px) {
     .main-header h1 {
-        font-size: 1.9rem;
+        font-size: 2.2rem;
+    }
+
+    .main-header .subtitle {
+        font-size: 1.1rem;
     }
 
     .timeline-line {
@@ -227,12 +263,12 @@ body {
 
     .timeline-item {
         padding-left: 50px;
-        margin-bottom: 45px;
+        margin-bottom: 50px;
     }
 
     .timeline-badge {
-        left: 17px;
-        top: 22px;
+        left: 14px;
+        top: 24px;
     }
 
     .article-date {
@@ -241,11 +277,23 @@ body {
         margin-top: 8px;
     }
 
-    .timeline-panel {
-        padding: 22px;
+    .panel-header {
+        padding: 20px 25px;
     }
 
     .panel-header h2 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
+    }
+
+    .panel-body {
+        padding: 25px;
+    }
+    
+    .panel-body h3 {
+        font-size: 1.2rem;
+    }
+
+    .panel-body p {
+        text-indent: 15px;
     }
 }
