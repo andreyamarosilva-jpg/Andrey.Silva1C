@@ -1,0 +1,286 @@
+/* ==========================================================
+   ESTILO VINTAGE AMARELADO - PERGAMINHO HISTÓRICO
+   ========================================================== */
+
+:root {
+    --bg-paper: #f7eea8;          /* Amarelado pergaminho */
+    --bg-paper-dark: #e8d888;     /* Amarelado envelhecido */
+    --bg-card: #f2e399;           /* Fundo dos artigos */
+    --text-primary: #2a2118;      /* Marrom/preto tinta antiga */
+    --text-secondary: #4d3a2b;
+    --accent-red: #801818;        /* Vermelho tinto */
+    --accent-gold: #9e7412;       /* Dourado envelhecido */
+    --border-color: #8c7147;      /* Borda marrom */
+    
+    --font-serif-title: 'Cinzel', serif;
+    --font-serif-body: 'IM Fell English', serif;
+    --font-script: 'Tangerine', cursive;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1a140e;
+    color: var(--text-primary);
+    font-family: var(--font-serif-body);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    padding: 30px 15px;
+}
+
+/* Container de Papel Amarelado */
+.paper-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: var(--bg-paper);
+    background-image: radial-gradient(var(--bg-paper-dark) 1px, transparent 0);
+    background-size: 20px 20px;
+    border: 10px double var(--border-color);
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.85);
+    padding: 40px;
+    position: relative;
+}
+
+/* Header do Topo */
+.main-header {
+    text-align: center;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+}
+
+.header-tag {
+    font-family: var(--font-script);
+    font-size: 2.2rem;
+    color: var(--accent-gold);
+    display: block;
+}
+
+.main-header h1 {
+    font-family: var(--font-serif-title);
+    color: var(--accent-red);
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 5px 0;
+}
+
+.header-subtitle {
+    font-style: italic;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+}
+
+.divider-ornament {
+    margin-top: 15px;
+    color: var(--accent-gold);
+    font-family: var(--font-serif-title);
+    font-size: 1.1rem;
+}
+
+/* Menu de Navegação - 4 Subtítulos Macro */
+.macro-nav {
+    background-color: var(--bg-paper-dark);
+    border: 2px solid var(--border-color);
+    padding: 15px 20px;
+    margin-bottom: 40px;
+}
+
+.macro-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.macro-nav a {
+    color: var(--accent-red);
+    text-decoration: none;
+    font-family: var(--font-serif-title);
+    font-size: 0.95rem;
+    font-weight: 700;
+    transition: all 0.3s;
+    display: block;
+    padding: 6px 10px;
+    border-left: 3px solid transparent;
+}
+
+.macro-nav a:hover {
+    background-color: rgba(128, 24, 24, 0.1);
+    border-left: 3px solid var(--accent-red);
+    color: #000;
+}
+
+/* Blocos Principais */
+.macro-block {
+    margin-bottom: 50px;
+}
+
+.macro-heading {
+    font-family: var(--font-serif-title);
+    background-color: var(--accent-red);
+    color: #f7eea8;
+    padding: 12px 18px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    border: 1px solid var(--accent-gold);
+}
+
+/* Cartões dos Tópicos */
+.topic-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.year-badge {
+    background-color: var(--accent-gold);
+    color: #fff;
+    font-family: var(--font-serif-title);
+    font-size: 0.85rem;
+    padding: 2px 8px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.topic-card h3 {
+    font-family: var(--font-serif-title);
+    color: var(--text-primary);
+    font-size: 1.3rem;
+}
+
+.sub-title {
+    color: var(--accent-red);
+    font-style: italic;
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.topic-card p {
+    text-align: justify;
+    margin-bottom: 12px;
+}
+
+.custom-list {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.custom-list li {
+    margin-bottom: 8px;
+}
+
+/* Galeria de Imagens (Seção Separada) */
+.gallery-section {
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.gallery-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    text-align: center;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    filter: sepia(0.6) contrast(1.1);
+    border: 1px solid var(--border-color);
+    margin-bottom: 10px;
+}
+
+.gallery-card figcaption {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.gallery-card figcaption strong {
+    display: block;
+    color: var(--accent-red);
+    font-family: var(--font-serif-title);
+    margin-bottom: 4px;
+}
+
+/* HEADER / BLOCO DE FECHAMENTO FINAL */
+.closing-header {
+    margin-top: 60px;
+    padding: 10px;
+    background-color: var(--bg-paper-dark);
+    border: 2px solid var(--accent-red);
+}
+
+.closing-border {
+    border: 1px dashed var(--border-color);
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.seal-icon {
+    font-family: var(--font-serif-title);
+    color: var(--accent-gold);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.closing-header h2 {
+    font-family: var(--font-serif-title);
+    color: var(--accent-red);
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.closing-summary {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+.signature-block span {
+    display: block;
+    font-family: var(--font-script);
+    font-size: 2rem;
+    color: var(--accent-red);
+}
+
+.signature-block small {
+    font-family: var(--font-serif-title);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .paper-container {
+        padding: 20px 15px;
+    }
+
+    .main-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .topic-card {
+        padding: 15px;
+    }
+}
